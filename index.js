@@ -5,7 +5,7 @@ const port = process.env.PORT || 3000;
 
 app.get('/wallets/:wallet', (req, res) => {
   const randomRes = Math.floor(Math.random() * 10);
-  const wallet = req.params.wallet + ':' + randomRes.toString();
+  const wallet = randomRes.toString() + ':' + req.params.wallet;
   res.status(200).json({ wallet });
 });
 
